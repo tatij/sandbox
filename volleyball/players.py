@@ -5,9 +5,9 @@ class Player:
         self.weight = weight
         self.age = age
     def move_right(self):
-	    pass
-	def move_left(self):
-	    pass
+        pass
+    def move_left(self):
+        pass
 class Hitter(Player):
     def block(self):
 	    pass

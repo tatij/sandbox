@@ -1,9 +1,9 @@
 class Player:
     def __init__(self, name, height, weight, age):
         self.name = name
-		self.height = height
-		self.weight = weight
-		self.age = age
+        self.height = height
+        self.weight = weight
+        self.age = age
     def move_right(self):
 	    pass
 	def move_left(self):

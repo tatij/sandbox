@@ -22,10 +22,10 @@ class MiddleBlocker(Hitter):
         if position == 2:
             while not self.meet_block():
                 self.move_right()
-                super().block()
+            super().block()
         elif position == 3:
             super().block()
         elif position == 4:
             while not self.meet_block():
                 self.move_left()
-                super().block()
+            super().block()

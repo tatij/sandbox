@@ -27,5 +27,5 @@ class MiddleBlocker(Hitter):
             super().block()
 		elif position == 4:
 		    while not self.meet_block():
-			    self.move_left()
+                self.move_left()
                 super().block()

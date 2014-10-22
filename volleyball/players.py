@@ -23,9 +23,9 @@ class MiddleBlocker(Hitter):
             while not self.meet_block():
                 self.move_right()
                 super().block()
-		elif position == 3:
+        elif position == 3:
             super().block()
-		elif position == 4:
-		    while not self.meet_block():
+        elif position == 4:
+            while not self.meet_block():
                 self.move_left()
                 super().block()

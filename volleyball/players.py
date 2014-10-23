@@ -7,10 +7,12 @@ class Player:
     def move_right(self):
         pass
     def move_left(self):
-        pass
+        pass    
 class Hitter(Player):
     def block(self):
 	    pass
+    def meet_block(self):
+        pass
 class Setter(Player):
     pass
 class OutsideHitter(Hitter):

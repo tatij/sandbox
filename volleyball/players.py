@@ -7,20 +7,22 @@ class Player:
         self.height = height
         self.weight = weight
         self.age = age
-
     def move_right(self):
         '''
         move player one step right
         '''
         pass
-
     def move_left(self):
         '''
         move player one step left
         '''
-        pass    
-
-
+        pass   
+    def move_front(self):
+        pass
+    def meet_ball(self):
+        pass
+    #def move_back(self):
+        #pass
 class Hitter(Player):
     '''
     Any Hitter
@@ -29,37 +31,40 @@ class Hitter(Player):
         '''
         block hitter 
         '''
-	pass
-
+        pass
     def meet_block(self):
         '''
         check whether player have met teammate which are going to block hit
         '''
         pass
-
-
+    def beat(self, position):
+        if position == 2:
+            self.beat_week()
+        elif position == 3:
+            self.beat_middle()
+        elif position == 4:
+            self.beat_out()
 class Setter(Player):
-    pass
-
-
+    def give_pass(self, position):
+        self.beat(position)
 class OutsideHitter(Hitter):
     '''
     Teams outside hitters are usually the primary attackers on the team. 
     These hitters attack balls that are set to the left side of the court. 
     Outside hitters may also be referred to as outside blockers.
     '''
-    pass
-
- 
+    def beat_out(self):
+        while not self.meet_ball():
+            self.move_front() 
 class WeeksideHitter(Hitter):
     '''
     Team`s weak side hitters hit from the right side of the court and are 
     usually not the primary attackers on the team. 
     Weakside hitters may also be referred to as weakside blockers.
     '''
-    pass
-
-
+    def beat_week(self):
+        while not self.meet_ball():
+            self.move_front()
 class MiddleBlocker(Hitter):
     '''
     On defense, the Middle Blocker position is the player at the net in the 
@@ -83,3 +88,6 @@ class MiddleBlocker(Hitter):
             while not self.meet_block():
                 self.move_left()
             super().block()
+    def beat_middle(self):
+        while not self.meet_ball():
+            self.move_front()

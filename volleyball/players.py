@@ -48,7 +48,7 @@ class Hitter(Player):
         '''
         pass
     
-    def beat(self, position):
+    def beat(self,):
 		pass
 
 

@@ -74,8 +74,9 @@ class WeeksideHitter(Hitter):
     usually not the primary attackers on the team. 
     Weakside hitters may also be referred to as weakside blockers.
     '''
-    
-    pass
+    def beat(self):
+		self.wait_for_ball()
+		super().beat()   
 
 
 class MiddleBlocker(Hitter):

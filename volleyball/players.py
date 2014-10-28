@@ -49,13 +49,13 @@ class Hitter(Player):
         pass
     
     def beat(self,):
-		pass
+        pass
 
 
 class Setter(Player):
     
     def give_pass(self, position):
-		pass
+        pass
 
 
 class OutsideHitter(Hitter):
@@ -63,7 +63,7 @@ class OutsideHitter(Hitter):
     Teams outside hitters are usually the primary attackers on the team. 
     These hitters attack balls that are set to the left side of the court. 
     Outside hitters may also be referred to as outside blockers.
-    '''	
+    '''
     
     pass
 
@@ -75,8 +75,8 @@ class WeeksideHitter(Hitter):
     Weakside hitters may also be referred to as weakside blockers.
     '''
     def beat(self):
-		self.wait_for_ball()
-		super().beat()   
+        self.wait_for_ball()
+        super().beat()   
 
 
 class MiddleBlocker(Hitter):

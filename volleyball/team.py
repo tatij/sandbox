@@ -1,3 +1,5 @@
+from volleyball.players import MiddleBlocker, OutsideHitter, Setter
+
 class Team(dict):
     
     def is_complete(self):

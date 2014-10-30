@@ -6,12 +6,6 @@ class Team(dict):
     def initial_positions(self):
         pass
     
-    def min_one_setter(self):
-        pass
-    
-    def min_five_hitter(self):
-        pass
-    
     
 class Set:
     pass

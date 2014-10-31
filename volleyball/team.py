@@ -8,7 +8,7 @@ class Team(dict):
         count_OutsideHitter = 0
         count_Setter = 0
         count_players = 0
-        for num, player in self.items():
+        for player in self.values():
             count_players = count_players + 1
             if isinstance(player, MiddleBlocker):
                 count_MiddleBlocker = count_MiddleBlocker + 1

@@ -22,9 +22,26 @@ class Team(dict):
             return True
     
     def initial_positions(self):
-        pass
-    
-    
+        result = 0
+        for num, player in self.items(): 
+            if isinstance(player, MiddleBlocker):
+                if num == 1 or num == 4:
+                    result = result + 1
+                    print("1_4")
+            elif isinstance(player, Setter):
+                if num == 2 or num == 5:
+                    result = result + 1
+                    print("2_5")
+            elif isinstance(player, OutsideHitter):
+                if num == 3 or num == 6:
+                    result = result + 1
+                    print("3_6")
+        if result == 3:
+            return True
+        else:
+            return False    
+        
+                                   
 class Set:
     pass
 

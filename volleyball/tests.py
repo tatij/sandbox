@@ -84,6 +84,49 @@ class TestIsComplete(unittest.TestCase):
             }                
         )
         self.assertFalse(wg_team.is_complete())
+        
+    def test_position_players_true(self):
+        wg_team = Team()
+        wg_team[1] =  MiddleBlocker('oleg', 192, 96, 32)
+        wg_team[2] =  Setter('tanya', 167, 60, 25)
+        wg_team[3] =  OutsideHitter('jora', 188, 96, 32)
+        wg_team[4] =  MiddleBlocker('alexey', 191, 96, 32)
+        wg_team[5] =  Setter('sergey', 172, 96, 32)        
+        wg_team[6] =  OutsideHitter('alex', 194, 96, 32)        
+        self.assertTrue(wg_team.initial_positions())
+    
+    def test_position_players_false(self):
+        wg_team = Team()
+        wg_team[3] =  MiddleBlocker('oleg', 192, 96, 32)
+        wg_team[1] =  OutsideHitter('jora', 188, 96, 32)
+        wg_team[5] =  Setter('sergey', 172, 96, 32)
+        wg_team[4] =  MiddleBlocker('alexey', 191, 96, 32)
+        wg_team[6] =  OutsideHitter('alex', 194, 96, 32)
+        wg_team[2] =  Setter('tanya', 167, 60, 25)
+        self.assertFalse(wg_team.initial_positions())
+        
+    def test_count_position_players_false(self):
+        wg_team = Team()
+        wg_team[3] =  MiddleBlocker('oleg', 192, 96, 32)
+        wg_team[5] =  Setter('sergey', 172, 96, 32)
+        wg_team[4] =  MiddleBlocker('alexey', 191, 96, 32)
+        wg_team[6] =  OutsideHitter('alex', 194, 96, 32)
+        wg_team[2] =  Setter('tanya', 167, 60, 25)
+        self.assertFalse(wg_team.initial_positions())
+        
+    def test_count_position_players_true(self):
+        wg_team = Team()
+        wg_team[3] =  MiddleBlocker('oleg', 192, 96, 32)
+        wg_team[1] =  OutsideHitter('jora', 188, 96, 32)
+        wg_team[5] =  Setter('anya', 160, 50, 21)
+        wg_team[4] =  MiddleBlocker('alexey', 191, 96, 32)
+        wg_team[6] =  OutsideHitter('alex', 194, 96, 32)
+        wg_team[2] =  Setter('tanya', 167, 60, 25)
+        self.assertTrue(wg_team.initial_positions())
+        
+        
+        
+        
 
 
 #class TestInitialPosition(TestCase):

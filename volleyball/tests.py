@@ -104,32 +104,28 @@ class TestIsComplete(unittest.TestCase):
         wg_team[6] =  OutsideHitter('alex', 194, 96, 32)
         wg_team[2] =  Setter('tanya', 167, 60, 25)
         self.assertFalse(wg_team.initial_positions())
+
         
+class TestInitialPositions(unittest.TestCase):
     def test_count_position_players_false(self):
         wg_team = Team()
         wg_team[3] =  MiddleBlocker('oleg', 192, 96, 32)
         wg_team[5] =  Setter('sergey', 172, 96, 32)
         wg_team[4] =  MiddleBlocker('alexey', 191, 96, 32)
         wg_team[6] =  OutsideHitter('alex', 194, 96, 32)
+        wg_team[1] =  OutsideHitter('Igor', 197, 90, 28)
         wg_team[2] =  Setter('tanya', 167, 60, 25)
-        self.assertFalse(wg_team.initial_positions())
-        
-    def test_count_position_players_true(self):
-        wg_team = Team()
-        wg_team[3] =  MiddleBlocker('oleg', 192, 96, 32)
-        wg_team[1] =  OutsideHitter('jora', 188, 96, 32)
-        wg_team[5] =  Setter('anya', 160, 50, 21)
-        wg_team[4] =  MiddleBlocker('alexey', 191, 96, 32)
-        wg_team[6] =  OutsideHitter('alex', 194, 96, 32)
-        wg_team[2] =  Setter('tanya', 167, 60, 25)
-        self.assertTrue(wg_team.initial_positions())
-        
-        
-        
-        
+        initial_positions = wg_team.initial_positions()
+        # there should be dict with court positions as key and players as values
+        positions = {}
+        for pos, player in initial_positions.items():
+            for cls in (MiddleBlocker, OutsideHitter, Setter):
+                if isinstance(player, cls):
+                   positions.setdefault(cls, []).append(pos)
+        self.assertEqual(len(positions[MiddleBlocker]), 2)
+        self.assertEqual(max(positions[MiddleBlocker]) - min(positions[MiddleBlocker]), 3)
+        # TODO: add other validations
 
 
-#class TestInitialPosition(TestCase):
-            
 if __name__ == '__main__':
     unittest.main()

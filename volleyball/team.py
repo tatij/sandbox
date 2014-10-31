@@ -22,7 +22,21 @@ class Team(dict):
             return True
     
     def initial_positions(self):
-        result = 0
+        '''
+        return initial positions of players as a dict where
+        positions on the court are keys and players are values.
+        For example:
+            {
+                1: <Player>,
+                2: <Player>,
+                3: <Player>,
+                4: <Player>,
+                5: <Player>,
+                6: <Player>
+            }
+        '''
+        result = {}
+        # TODO: rework following code
         for num, player in self.items(): 
             if isinstance(player, MiddleBlocker):
                 if num == 1 or num == 4:

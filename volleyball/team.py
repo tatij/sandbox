@@ -20,9 +20,6 @@ class Team(dict):
             return False
         else:
             return True
-        print(count_MiddleBlocker)
-        print(count_OutsideHitter)
-        print(count_Setter)
     
     def initial_positions(self):
         pass

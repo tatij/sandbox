@@ -106,6 +106,7 @@ class TestInitialPositions(unittest.TestCase):
             for cls in (MiddleBlocker, OutsideHitter, Setter):
                 if isinstance(player, cls):
                     positions.setdefault(cls, []).append(pos)
+        for pos, player in initial_positions.items():
             for cls in (MiddleBlocker, OutsideHitter, Setter):
                 self.assertEqual(len(positions[cls]), 2)
                 self.assertEqual(max(positions[cls]) - min(positions[cls]), 3)

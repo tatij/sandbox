@@ -38,11 +38,14 @@ class Team(dict):
         # TODO: rework following code
         for num, player in self.items(): 
             if isinstance(player, MiddleBlocker):
-                result[MiddleBlocker] = [3, 6]
+                result[3] = player
+                result[6] = player
             if isinstance(player, Setter):
-                result[Setter] = [1, 4]
+                result[1] = player
+                result[4] = player
             if isinstance(player, OutsideHitter):
-                result[OutsideHitter] = [2, 5]
+                result[2] = player
+                result[5] = player
         return(result)         
         
                                    

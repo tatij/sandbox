@@ -87,7 +87,7 @@ class TestIsComplete(unittest.TestCase):
         
         
 class TestInitialPositions(unittest.TestCase):
-    def test_count_position_players_false(self):
+    def test_position_players(self):
         wg_team = Team()
         wg_team[1] =  OutsideHitter('Igor', 197, 90, 28)
         wg_team[2] =  Setter('tanya', 167, 60, 25)

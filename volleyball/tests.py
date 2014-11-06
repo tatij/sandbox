@@ -1,4 +1,5 @@
 import unittest
+import itertools
 
 from volleyball.players import MiddleBlocker, OutsideHitter, Setter
 from volleyball.team import Team
@@ -101,14 +102,16 @@ class TestInitialPositions(unittest.TestCase):
         
         initial_positions = wg_team.initial_positions()
         # there should be dict with court positions as key and players as values
-        positions = {}
+        positions = {}        
         for pos, player in initial_positions.items():
             for cls in (MiddleBlocker, OutsideHitter, Setter):
                 if isinstance(player, cls):
                     positions.setdefault(cls, []).append(pos)
+        for player1, player2 in itertools.combinations(initial_positions.values(), 2):
+            self.assertNotEqual(player1, player2)
         for cls in (MiddleBlocker, OutsideHitter, Setter):
-                self.assertEqual(len(positions[cls]), 2)
-                self.assertEqual(max(positions[cls]) - min(positions[cls]), 3)    
+            self.assertEqual(len(positions[cls]), 2)
+            self.assertEqual(max(positions[cls]) - min(positions[cls]), 3)    
                 
                 
         # TODO: add other validations

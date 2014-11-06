@@ -35,7 +35,6 @@ class Team(dict):
             }
         '''
         result = {}
-        # TODO: rework following code
         for num, player in self.items(): 
             if isinstance(player, MiddleBlocker):
                 result[3] = player

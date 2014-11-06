@@ -26,12 +26,12 @@ class Team(dict):
         positions on the court are keys and players are values.
         For example:
             {
-                1: <Player>,
-                2: <Player>,
-                3: <Player>,
-                4: <Player>,
-                5: <Player>,
-                6: <Player>
+                1: <MiddleBlocker object>,
+                2: <Setter object>,
+                3: <OutsideHitter object>,
+                4: <MiddleBlocker object>,
+                5: <Setter object>,
+                6: <OutsideHitter object>
             }
         '''
         result = {}

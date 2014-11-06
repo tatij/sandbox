@@ -37,14 +37,20 @@ class Team(dict):
         result = {}
         for num, player in self.items(): 
             if isinstance(player, MiddleBlocker):
-                result[3] = player
-                result[6] = player
+                if 3 in result:
+                    result[6] = player
+                else:
+                    result[3] = player
             if isinstance(player, Setter):
-                result[1] = player
-                result[4] = player
+                if 1 in result:
+                    result[4] = player
+                else:
+                    result[1] = player
             if isinstance(player, OutsideHitter):
-                result[2] = player
-                result[5] = player
+                if 2 in result:
+                    result[5] = player
+                else:
+                    result[2] = player
         return(result)         
         
                                    

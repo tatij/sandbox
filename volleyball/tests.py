@@ -106,9 +106,9 @@ class TestInitialPositions(unittest.TestCase):
             for cls in (MiddleBlocker, OutsideHitter, Setter):
                 if isinstance(player, cls):
                     positions.setdefault(cls, []).append(pos)
-            for cls in (MiddleBlocker, OutsideHitter, Setter):
+        for cls in (MiddleBlocker, OutsideHitter, Setter):
                 self.assertEqual(len(positions[cls]), 2)
-                self.assertEqual(max(positions[cls]) - min(positions[cls]), 3)
+                self.assertEqual(max(positions[cls]) - min(positions[cls]), 3)    
                 
                 
         # TODO: add other validations

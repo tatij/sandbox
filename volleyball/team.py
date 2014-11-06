@@ -1,6 +1,5 @@
 from volleyball.players import MiddleBlocker, OutsideHitter, Setter
 
-
 class Team(dict):
     
     def is_complete(self): 
@@ -39,21 +38,12 @@ class Team(dict):
         # TODO: rework following code
         for num, player in self.items(): 
             if isinstance(player, MiddleBlocker):
-                if num == 1 or num == 4:
-                    result = result + 1
-                    print("1_4")
-            elif isinstance(player, Setter):
-                if num == 2 or num == 5:
-                    result = result + 1
-                    print("2_5")
-            elif isinstance(player, OutsideHitter):
-                if num == 3 or num == 6:
-                    result = result + 1
-                    print("3_6")
-        if result == 3:
-            return True
-        else:
-            return False    
+                result[MiddleBlocker] = [3, 6]
+            if isinstance(player, Setter):
+                result[Setter] = [1, 4]
+            if isinstance(player, OutsideHitter):
+                result[OutsideHitter] = [2, 5]
+        return(result)         
         
                                    
 class Set:

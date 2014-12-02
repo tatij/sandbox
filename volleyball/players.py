@@ -19,17 +19,8 @@ class Player:
         '''
         move player one step left
         '''
-        pass   
-    
-    #def move_front(self):
-        #pass
-    
-    #def meet_ball(self):
-        #pass
-    
-    #def move_back(self):
-        #pass
-
+        pass
+     
 
 class Hitter(Player):
     '''
